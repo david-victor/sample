@@ -11,4 +11,4 @@ pipelines:
         caches:
           - maven
         script: # Modify the commands below to build your repository.
-          - mvn install dockerfile:build # -B batch mode makes Maven less verbose
+          - mvn test # -B batch mode makes Maven less verbose
