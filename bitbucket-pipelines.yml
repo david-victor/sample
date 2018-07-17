@@ -11,4 +11,8 @@ pipelines:
         caches:
           - maven
         script: # Modify the commands below to build your repository.
-          - mvn package fabric8:deploy -Popenshift -DskipTests # -B batch mode makes Maven less verbose
+          - mvn clean
+          - mvn install
+          - docker build -t docker-registry.default.svc:5000/my-sample/openjdk-app . # -B batch mode makes Maven less verbose
+options:
+  docker: true
